@@ -16,16 +16,24 @@ class Controller:
         for ch in string:
             for key in chs:
                 if key == ch:
-                    print(ch)
-                    print(key)
-                    print(chs[key])
                     conversion += chs[key]
-                    
-        print(f"{string} succesfully converted to morse")
+            conversion += " "
+
+        # remove the final blank line
+        conversion = conversion.rstrip()
         print(f"Morse code: {conversion}")
+        return conversion
 
     def decode(self, morse_code):
         """
         Method that converts morse code to string
         """
-        pass
+        morse_code = morse_code.split(" ")
+        conversion = ""
+        for ch in morse_code:
+            for key in chs:
+                if chs[key] == ch:
+                    conversion += key
+
+        print(f"String: {conversion}")
+        return conversion
